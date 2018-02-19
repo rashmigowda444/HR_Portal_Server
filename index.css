@@ -1,0 +1,243 @@
+<style>
+
+/*index.php*/ /*hr.php*/
+label{
+ font-family: 'Quicksand', sans-serif;font-size:14px !important;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Jura', sans-serif;font-weight:600 bold;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Jura', sans-serif;font-weight:600 bold;
+}
+p{
+  font-family: 'Quicksand', sans-serif;font-size:14px !important;
+}
+button{
+  font-family: 'Quicksand', sans-serif;font-size:14px !important;
+}
+a{
+  font-family: 'Quicksand', sans-serif;font-size:14px !important;
+}
+.body{
+font-family: 'jura', sans-serif;
+}
+/*login.php*/
+
+#logo{
+  margin-left:120px;
+}
+#divwell{
+  background:url('images/bg1.jpg') no-repeat;background-size:cover;height:500px;width:600px;margin-left:350px;margin-top:60px;
+}
+#insidewell{
+  height:300px;width:400px;margin-top:100px;background-color:white;margin-left:70px;box-shadow:0px 5px 15px 0px #888888; 
+}
+.divhead{
+  height:35px;width:360px;background:url('images/bg11.jpg') no-repeat;background-size:cover;border-radius:5px;padding-left:10px;}
+
+#send{
+  width:100px;border-radius:3px;background-color:brown;color:white;
+}
+.foot{
+  margin-left:520px;
+}
+
+
+
+
+/*dashboard.php*/
+.body{
+  padding-left: 50px;padding-right: 50px;
+}
+#divtop{
+  height:80px;padding-top: 10px;padding-bottom: 10px;
+}
+#ultopnav{
+  list-style: none;
+}
+#litoplogo{
+  float:left;
+}
+#litopwelcome{
+  float:right;margin-right:70px;padding-top: 20px;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+#hrline{
+  width:95%;border-top: 2px solid silver !important;
+}
+#h4head{
+  text-align: center;font-size:16px !important;
+}
+#h1head{
+  text-align: center;font-size:36px !important;
+}
+#dashimg{
+  margin-top:20px;
+}
+#rowdash{
+  padding-left: 20px;padding-right: 20px;background-color:beige;box-shadow:0px 5px 15px 0px #888888;width:97%;margin-left:20px;
+}
+#divfoot{
+  margin-top:30px;padding-left: 500px;
+}
+#colrightcont{
+  padding-left: 20px;
+
+}
+
+
+
+/*emp_dashboard*/
+#a-btn{
+text-decoration: none;
+}
+.btn{
+background-color:brown !important;color:white;
+}
+
+/*apply_leave.php*/
+#headingwell{
+  width:80%;height:35px;margin-left:80px;position:absolute;background-color:brown;
+}
+#headingdash{
+  color:white;bottom:33px;position:relative;
+}
+#contentwell{
+width:84.6%;position:relative;margin-top:40px;margin-left:80px;background-color: beige;padding-top:40px;
+}
+
+#field{
+  width:350px;height:35px;border-radius:5px;border:none;background-color:white;
+}
+#datepicker1{
+ width:350px;height:35px;border-radius:5px;border:none;background-color:white;
+}
+#datepicker2{
+ width:350px;height:35px;border-radius:5px;border:none;background-color:white;
+}
+#btn{
+width:120px;height:40px;border-radius:none;background-color:brown;color:white;border:none;
+}
+#hrbef{
+border-top: 1px solid silver !important;
+}
+
+
+/*my_info.php*/
+.headinginfo{
+  color:white;bottom:33px;position:relative;
+}
+#leftwell{
+  width:84%;height:40px;margin-left:20px;position:absolute;background-color: silver;
+}
+#imgwell{
+  margin-top:-35px;width:117%;margin-left: -19px;height:250px;
+}
+#rightwell{
+    width:95%;height:40px;position:absolute;background-color: silver;
+
+}
+#rightinnerwell{
+  height:auto;background-color: #F8F8F8 !important;width:98%;margin-top: 40px;padding-top:30px;
+}
+
+#spanname{
+  margin-left:95px;height:30px;
+}
+#spanid{
+  margin-left:80px;margin-right: 50px;height:30px;
+}
+#spanother{
+   margin-left:80px;height:30px;
+}
+#spanlicense{
+  margin-right:50px;
+}
+#spangender{
+  margin-left: 115px;margin-right: 110px;
+}
+#spanstatus{
+  margin-left:40px;width:180px;
+}
+#spannat{
+  margin-left: 90px;margin-right: 60px;width:180px;
+}
+#spanmydob{
+  margin-left: 40px;
+}
+#spancomment{
+  margin-left:100px;
+}
+#ulinfo{
+  width:117%;margin-left: -20px;list-style: none;height:300px;
+}
+
+
+#liinfo{
+text-align: center;margin-left:-40px;width:260px;
+}
+  
+#liinfo a{
+  background-color:#1D2951;color:white;
+}
+
+#liinfo a:hover{
+  background-color:#1B1E24;
+}
+
+
+/*admin_generate_report.php*/
+.whitecolor{
+font-color:white;	
+	
+}
+	
+	
+	/*  admin_upload_document*/
+
+
+#headingwell2{
+  width:50%;height:35px;margin-left:100px;position:absolute;background-color:brown;
+}
+
+
+#button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/* admin apply leave.php */
+
+.btn_admin_applyleave{
+background-color:brown !important;color:white;
+}
+
+
+
+/*admin add leaves.php */
+#field_for_dropdown{
+  width:350px;height:35px;border-radius:5px;border:none;background-color:white;
+}
+.fieldleavetype1{
+  width:350px !important;height:35px !important;border-radius:5px!important;border:none !important;background-color:white !important;
+}
+
+</style>
