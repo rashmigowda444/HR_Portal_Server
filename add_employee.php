@@ -26,6 +26,14 @@
   </div><br>
   <div class="row">
   <div class="col-md-3">
+  <label>Employee Name :</label>
+  </div>
+  <div class="col-md-9">
+  <input name="name"  id="field" type="text" required>
+  </div>
+  </div><br>
+  <div class="row">
+  <div class="col-md-3">
   <label>Employee Password :</label>
   </div>
   <div class="col-md-9">
