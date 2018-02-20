@@ -210,16 +210,14 @@ $(function() {
   }
     echo" </select>";
   ?></td>
-<td><select name="year" class="form-control year" id="yearid" required >
-<option value="">--select--</option>
-</select></td>
+<td><select name="year" class="form-control year" id="yearid"  ></select></td>
       </tr>
     
     </tbody>
 </table>
 <hr>
 <input type="submit" name="sub1" class="btn btn-default" value="Submit" >&emsp;&emsp;
-<input type="reset"  class="btn btn-default" value="Reset"></input>
+<a href="admin_dashboard.php"><input type="reset"  class="btn btn-success" value="Back"></input></a>
 </form>
 </div>
 </div>
@@ -264,12 +262,12 @@ $(function() {
          echo"
       </select></td></tr></table>";  
   ?> </br>
-<input type="submit" name="sub2" class="btn btn-default" value="Submit"> &emsp;&emsp;
-<input type="reset"  class="btn btn-default" value="Reset"></input></a>
+<input type="submit" name="sub2" class="btn btn-success" value="Submit"> &emsp;&emsp;
+<a href="admin_dashboard.php"><input type="button"  class="btn btn-success" value="Back"></input></a>
 </form>
 </div>
 </div><br>
-<br>
+<!--<br><hr id="hrline">-->
 <?php
 if (isset($_POST['sub1'])) 
 {   
@@ -319,7 +317,9 @@ echo "<table class='table table-bordered view' id='leave_report'>
 	if($count>=1)
 	{}
 
-else {echo '<script language="javascript"> alert("NO Data found")</script>';}
+else {echo '<script language="javascript"> alert("NO Data found1")</script>';
+
+}
 
 	if(!$retval1) 
 		{  
@@ -484,7 +484,7 @@ echo "<tr>
   ?>
   </div>
 </div>
-<hr id="hrline">
+<br><hr id="hrline">
 <?php
 
   include('footer.php');

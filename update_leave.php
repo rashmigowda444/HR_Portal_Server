@@ -65,6 +65,8 @@ $from_date=$row['from_date'];
 $to_date=$row['to_date'];
 $no_of_days=$row['no_of_days'];
 $reason=$row['comment'];
+$leave_balance=$row['leave_balance'];
+$leave_id=$row['leave_id'];
 
 }
 echo "
@@ -110,9 +112,11 @@ $sql='select * from tekhub_leave_status';
 
 $eid = isset($_REQUEST['eid']) ? $_REQUEST['eid'] : "0";
 $lid = isset($_REQUEST['lid']) ? $_REQUEST['lid'] : "0";
-if(isset($_POST['leave_status'])) {
+if(isset($_POST['leave_status'])) 
+{
 
 $leave_status=$_POST['leave_status'];
+echo $leave_status;
 if($leave_status==0)
 {exit;
 }
@@ -121,9 +125,21 @@ $comment=$_POST['comment'];
 
 $sql1="Update tekhub_apply_leave set leave_status_id='$leave_status',reason_cancel='$comment' where emp_id='$eid' and apply_leave_id='$lid' ";
   $retval1=mysqli_query($conn,$sql1);
+    echo $no_of_days; echo "and "; echo $leave_balance; echo "tot";
+ 
+	  
+  if( $leave_status==3)
+  { $leave_balance_add=$leave_balance+$no_of_days;
+	  $sql2="UPDATE tekhub_user_leave set  leave_balance=$leave_balance_add  WHERE emp_id=$eid and leave_id=$leave_id ";
+	   $retval2=mysqli_query($conn,$sql2);
+	    if(!$retval2){
+  die('could not update data:'.mysqli_error($conn));
+     }
+	  
+  }
   if(!$retval1){
   die('could not update data:'.mysqli_error($conn));
-  }
+     }
 else{
 echo "<script>
 alert('updated successfully');

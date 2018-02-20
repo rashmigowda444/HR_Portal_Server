@@ -63,9 +63,7 @@ function validateForm() {
     echo" </select>";
   ?></td>
 <td><select name="year" class="form-control year" id="field1" required >
-<option value="">--select--</option>
-
-</select></td>
+<option value="">--select--</option></select></td>
       </tr>
     
     </tbody>
@@ -84,7 +82,6 @@ if (isset($_POST['sub'])) {
  $year=$_POST['year'];
 
 $sql = "select emp_id from tekhub_employee_personal_details where emp_name='$name'";
-
 $retval=mysqli_query($conn,$sql);
 $numrow=mysqli_num_rows($retval);
 if($numrow==0)
@@ -98,6 +95,7 @@ die('Could not fetch data: ' . mysqli_error($conn));
   }
 while($row= mysqli_fetch_array($retval,MYSQLI_ASSOC)){
 	 $emp_id=$row['emp_id'];
+	 
 }
 
 if($leave_type=='0')
