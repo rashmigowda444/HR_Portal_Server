@@ -22,6 +22,7 @@ function validatetodate() {
 	 if(fromdate1==''||fromdate1==null)
 	 {
 		 alert("please Select Leave from the date");
+		 document.getElementById("datepicker2").value="";
 		 return false;
 	 }
 	
@@ -134,7 +135,7 @@ var fromDate = $datepicker1.datepicker('getDate');
 
    
     if (days <= 0) {
-      alert("Please enter an end date after the begin date");
+      alert("Please enter an end date after the begin date..  ");
 	  document.getElementById("datepicker2").value="";
     }
     else {
@@ -310,6 +311,50 @@ else if($leave_type==3 && $no_days>2)
 echo "<script >alert('Cannot taken morethan two Sick leaves please contact hr team')</script>";
 exit;
 }
+
+$sql_for_date_compare="select * from tekhub_apply_leave WHERE 
+(from_date='$from_date' or    to_date='$to_date' ) and emp_id='$id' and leave_id='$leave_type'";
+  $retval_for_date=mysqli_query($conn,$sql_for_date_compare);
+
+while($row_date= mysqli_fetch_array($retval_for_date)){
+	$from_date_db = $row_date['from_date'];
+	$to_date_db = $row_date['to_date'];
+	echo $from_date_db;
+	if($from_date==$from_date_db||$from_date==$to_date_db||$to_date==$from_date_db||$to_date==$to_date_db )
+	{
+		echo "<script> alert('Leave already taken for this  date, please check the date and try again   '); </script>";
+	exit;
+	}/*if($to_date==$to_date_db)
+		{	
+	
+	echo "<script> alert('leave already taken on this  date '); </script>";
+	exit;
+	}*/
+	
+}
+
+if(!$retval_for_date)
+{
+die('Could not fetch data: ' . mysqli_error($conn));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $sql="select * from tekhub_user_leave as a inner join tekhub_leaves as b on a.leave_id=b.leave_id where a.leave_id='$leave_type' and emp_id='$id'";
   $retval=mysqli_query($conn,$sql); 
   while($row= mysqli_fetch_array($retval)){
@@ -378,10 +423,6 @@ die('could not enter data:'.mysqli_error($conn));
 echo '<script language="javascript"> alert("Applied successfully")</script>';
 ?>
 <script>  document.location="emp_dashboard.php";  </script> <?php
-
-	
-	
-	
 	
 } 
 else{
@@ -451,7 +492,7 @@ die('could not enter data:'.mysqli_error($conn));
 }
 echo '<script language="javascript"> alert("Added successfully")</script>';
 ?>
-<script>  document.location="emp_dashboard.php";  </script> <?php
+<script>  document.location="emp_dashboard.php";   </script> <?php 
 }
 else{ 
     if( $leave_type==1){
@@ -468,14 +509,8 @@ else{
 echo '<script>      alert("Insufficient2 "+"'.$leave_name.'"+" balance");                  </script>';
 
 }//inside if else closedir */
-
-
-
-
 }
 
 ?>
-
-
 </body>
 </html>

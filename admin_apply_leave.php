@@ -403,6 +403,23 @@ else if($leave_type==3 && $no_days>2)
 echo "<script >alert('Cannot taken morethan two Sick leaves please contact hr team')</script>";
 exit;
 }
+
+
+$sql_for_date_compare="select * from tekhub_apply_leave WHERE 
+(from_date='$from_date' or    to_date='$to_date' ) and emp_id='$id' and leave_id='$leave_type'";
+  $retval_for_date=mysqli_query($conn,$sql_for_date_compare);
+
+while($row_date= mysqli_fetch_array($retval_for_date)){
+	$from_date_db = $row_date['from_date'];
+	$to_date_db = $row_date['to_date'];
+	echo $from_date_db;
+	if($from_date==$from_date_db||$from_date==$to_date_db||$to_date==$from_date_db||$to_date==$to_date_db )
+	{
+		echo "<script> alert('Leave already taken for this  date, please check the date and try again   '); </script>";
+	exit;
+	}
+
+}
 	$sql="select * from tekhub_user_leave where leave_id='$leave_type' and emp_id='$id'";
   $retval=mysqli_query($conn,$sql);
   
@@ -412,7 +429,6 @@ exit;
     
 } 
  $leave_balance_new=($leave_balance-$no_days);
-
 
 	 $leave_balance_duration=($leave_balance-$duration);
      if($no_days <= $leave_balance){ 
