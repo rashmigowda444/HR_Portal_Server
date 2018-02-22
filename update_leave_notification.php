@@ -65,6 +65,8 @@ $from_date=$row['from_date'];
 $to_date=$row['to_date'];
 $no_of_days=$row['no_of_days'];
 $reason=$row['comment'];
+$leave_balance=$row['leave_balance'];
+$leave_id=$row['leave_id'];
 
 }
 echo "
@@ -121,6 +123,16 @@ $comment=$_POST['comment'];
 
 $sql1="Update tekhub_apply_leave set leave_status_id='$leave_status',reason_cancel='$comment' where emp_id='$eid' and apply_leave_id='$lid' ";
   $retval1=mysqli_query($conn,$sql1);
+  	  
+  if( $leave_status==3)
+  { $leave_balance_add=$leave_balance+$no_of_days;
+	  $sql2="UPDATE tekhub_user_leave set  leave_balance=$leave_balance_add  WHERE emp_id=$eid and leave_id=$leave_id ";
+	   $retval2=mysqli_query($conn,$sql2);
+	    if(!$retval2){
+  die('could not update data:'.mysqli_error($conn));
+     }
+	  
+  }
   if(!$retval1){
   die('could not update data:'.mysqli_error($conn));
   }
@@ -131,7 +143,8 @@ window.location='admin_update_leaves_notification.php?eid=$eid&leave_id=$lid';
 </script>";
 }
 }
- mysqli_close($conn);
+ mysqli_close($conn);h3
+ 
 ?>
 
 </div>
