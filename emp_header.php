@@ -49,7 +49,7 @@ date_default_timezone_set('GMT');
        }      
   ?><span class="caret"></span></button></a>
     <ul class="dropdown-menu">
-     <li><a href="#">Change Password</a></li>
+     <li><a href="emp_change_password.php">Change Password</a></li>
       <li><a href="logout.php">Logout</a></li>
     </ul>
      </li>
