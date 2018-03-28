@@ -162,6 +162,7 @@ die('could not enter data:'.mysqli_error($conn));
   mysqli_close($conn);
   ?>
   
+
  </div>
 </div><br><hr id="hrline">
 
