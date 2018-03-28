@@ -194,12 +194,15 @@ function myFunction() {
    
 
    $lop_ded=($row['gross_earnings']/$work_days)*$lop_days;
-   $lop=number_format($lop_ded, 2, '.', ',');
+   $lop = round($lop_ded);
+   $lop=number_format($lop, 2, '.', ',');
 
-   $gross= $row['professional_tax']+$row['income_tax']+$lop_ded;
+   $gross= $row['professional_tax']+$row['income_tax']+$lop;
    $gross_deduc=number_format($gross, 2, '.', ',');
    $net=$row['net_pay']-$lop_ded;
+   $net = round($net);
    $net_pay=number_format($net, 2, '.', ',');
+   
 	echo"
 
    <div class='row' >
@@ -378,7 +381,7 @@ function myFunction() {
     
     ";
     
-   $number = $net;
+   $number =round($net);
    $no = round($number);
    $point = round($number - $no, 2) * 100;
    $hundred = null;
@@ -434,6 +437,7 @@ function myFunction() {
 else{
 
 echo'<script>alert("No payslip found for selected month and year")</script>';
+
 echo'<script>window.location.href="admin_view_payslip.php"</script>';
 }
 }
