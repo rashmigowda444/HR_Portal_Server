@@ -22,7 +22,12 @@
 
 <div class="row" >
   	<div class="well" id="headingwell">
-  		<h3 id="headingdash">View Payslip</h3>
+  		<h3 id="headingdash"><div class="row">View Payslip
+  <span style="float:right;"> 
+  <a href="admin_dashboard.php">
+  <img src="images\backarrow.png" style="width:35px;hieght:30px;margin-top:-9px;margin-right:8px;"> </a> </span>
+  
+  </div></h3>
   	</div>
 
 	<div class="well" id="contentwell">
@@ -72,7 +77,7 @@
 			  ?>
 
 			<button type="submit" id="btn" class="btn">Submit</button>&emsp;&emsp;
-				<a id="a-btn" href="admin_dashboard.php"><button type="button" id="btn" class="btn">Back</button></a>
+				<button type="reset" id="btn" class="btn">Reset</button>
 		</form>
 	</div>
 
